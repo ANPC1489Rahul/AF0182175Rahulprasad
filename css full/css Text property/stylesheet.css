@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#fontcss {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aqua;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    /* direction: rtl; */
+    /* <!---- right to left -------> */
+    /* text-indent: 60px; */
+    /* direction: ltr; */
+    /* <!---- left to right  -------> */
+    text-align: center;
+    text-transform: uppercase;
+}

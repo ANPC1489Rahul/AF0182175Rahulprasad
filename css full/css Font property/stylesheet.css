@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0%;
+}
+
+#fontCss {
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-variant: small-caps;
+    font-size: 2em;        /* <!--- 2em=16px ----> */
+    font-style: italic;
+    font-weight: bold;
+}

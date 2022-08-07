@@ -1,0 +1,20 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+ul1 {
+    list-style: square;
+}
+
+ul {
+    list-style: circle;
+}
+
+ol2 {
+    list-style: upper-roman;
+}
+
+ol {
+    list-style: lower-alpha;
+}
