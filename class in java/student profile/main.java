@@ -14,3 +14,7 @@ public class main{
 
     }    
 }
+
+
+output:
+2022
