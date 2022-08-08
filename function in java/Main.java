@@ -23,3 +23,6 @@ public class Main{
         System.out.println(salary);
     }
 }
+
+output:
+30240
