@@ -20,6 +20,11 @@ public class unboxing_demo {
 		System.out.println("The value of object is ="+i1);
 	}
 
-	
-
 }
+
+output:
+Enter a number
+34
+55
+The value of object is =34
+
