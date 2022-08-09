@@ -21,3 +21,10 @@ public class boxing_demo {
 	}
 
 }
+
+
+output:
+Enter a number
+65
+The value of object is =65
+
