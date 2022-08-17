@@ -1,0 +1,281 @@
+program to put input age from user throw user defie exception if entered ageis negative.
+
+package Rohit;
+
+import java.util.Scanner;
+
+public class Ageaccepet  {
+
+	public static void main(String[] args) 
+	{
+		int age;
+		Scanner sc=new Scanner(System.in);
+   System.out.println("Enter your age:");
+   age=sc.nextInt();
+   
+
+	try {
+		if(age<18) {
+			
+			throw new User("Invalid age");
+		}
+		else 
+		{
+			throw new User("Valid age");
+		
+		}
+	}catch(User e){
+		System.out.println(e);
+	}
+	
+	}
+
+}
+
+--------------------------------------------
+
+package Rohit;
+import java.lang.Exception;
+public class User extends Exception {
+   User(String s)
+   {
+	  super(s);
+   }
+	
+
+}
+
+
+
+
+
+package password_check;
+
+public class Invalidpassword extends Exception{
+
+	int passwordConditionViolated = 0;
+	  
+    public Invalidpassword(int conditionViolated)
+    {
+        super("Invalid Password: ");
+        passwordConditionViolated = conditionViolated;
+    }
+  
+    
+
+	public String printMessage()
+    {
+        
+        switch (passwordConditionViolated) {
+  
+      
+        // between 8 to 15 characters
+        case 1:
+            return ("Password length should be"
+                    + " between 8 to 15 characters");
+  
+       
+        case 2:
+            return ("Password should not"
+                    + " contain any space");
+  
+       
+        case 3:
+            return ("Password should contain"
+                    + " at least one digit(0-9)");
+  
+       
+        case 4:
+            return ("Password should contain at "
+                    + "least one special character");
+  
+       
+        case 5:
+            return ("Password should contain at"
+                    + " least one uppercase letter(A-Z)");
+  
+       
+        case 6:
+            return ("Password should contain at"
+                    + " least one lowercase letter(a-z)");
+        }
+  
+        return ("");
+    }
+	
+	public static void isValid(String password)
+	        throws Invalidpassword
+	        {
+		 if (!((password.length() >= 8)
+	              && (password.length() <= 15))) {
+	            throw new InvalidpasswordException(1);
+	        }
+	  
+	      
+	        if (password.contains(" ")) {
+	            throw new InvalidpasswordException(2);
+	        }
+	        if (true) {
+	            int count = 0;
+	  
+	          
+	            for (int i = 0; i <= 9; i++) {
+	  
+	             
+	                String str1 = Integer.toString(i);
+	  
+	                if (password.contains(str1)) {
+	                    count = 1;
+	                }
+	            }
+	            if (count == 0) {
+	                throw new Invalidpassword(3);
+	            }
+	        }
+	  
+	       
+	        if (!(password.contains("@") || password.contains("#")
+	              || password.contains("!") || password.contains("~")
+	              || password.contains("$") || password.contains("%")
+	              || password.contains("^") || password.contains("&")
+	              || password.contains("*") || password.contains("(")
+	              || password.contains(")") || password.contains("-")
+	              || password.contains("+") || password.contains("/")
+	              || password.contains(":") || password.contains(".")
+	              || password.contains(", ") || password.contains("<")
+	              || password.contains(">") || password.contains("?")
+	              || password.contains("|"))) {
+	            throw new InvalidpasswordException(4);
+	        }
+	  
+	        if (true) {
+	            int count = 0;
+	  
+	           
+	            for (int i = 65; i <= 90; i++) {
+	  
+	               
+	                char c = (char)i;
+	  
+	                String str1 = Character.toString(c);
+	                if (password.contains(str1)) {
+	                    count = 1;
+	                }
+	            }
+	            if (count == 0) {
+	                throw new InvalidpasswordException(5);
+	            }
+	        }
+	  
+	        if (true) {
+	            int count = 0;
+	  
+	           
+	            for (int i = 90; i <= 122; i++) {
+	  
+	               
+	                char c = (char)i;
+	                String str1 = Character.toString(c);
+	  
+	                if (password.contains(str1)) {
+	                    count = 1;
+	                }
+	            }
+	            if (count == 0) {
+	                throw new InvalidpasswordException(6);
+	            }
+	       }
+	        
+	        }
+	public static void main(String[] args)
+	        {
+	        	  
+	            String password1 = "rohit418";
+	      
+	            try {
+	                System.out.println("Is Password "
+	                                   + password1 + " valid?");
+	                isValid(password1);
+	                System.out.println("Valid Password");
+	            }
+	            catch (InvalidpasswordException e) {
+	                System.out.print(e.getMessage());
+	                System.out.println(e.printMessage());
+	            }
+	      
+	            String password2 = "Rohit418@";
+	            try {
+	                System.out.println("\nIs Password "
+	                                   + password2 + " valid?");
+	                isValid(password2);
+	                System.out.println("Valid Password");
+	            }
+	            catch (InvalidpasswordException e) {
+	                System.out.print(e.getMessage());
+	                System.out.println(e.printMessage());
+	            }
+	        }
+}
+	
+    
+
+Write a program to accept basic details name,phone number,addres,user_id,password.
+
+
+package Rohit;
+
+import java.util.Scanner;
+
+public class Accepet {
+
+	public static void main(String[] args) {
+		
+		String name;
+		int phone_no;
+		String address;
+		int id;
+		String password="rohits12";
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter your name:");
+	    name=sc.nextLine();
+	    
+	    System.out.println("Enter your phone number:");
+	    phone_no=sc.nextInt();
+	    
+	    System.out.println("Enter your address:");
+	    address=sc.nextLine();
+	    
+	   
+	    try {
+	    	System.out.println("Enter user id:");
+		    id=sc.nextInt();
+			int[] a=new int[8];
+			if(a.length<=8)
+			{
+				System.out.println("age is less"+a[a.length]);
+			}
+			else {
+				throw new ArrayIndexOutOfBoundsException("The length is more than Eight");
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	   
+	    if(password=="rohits12")
+	    {
+	    	
+	    	System.out.println("password are match");
+	    }
+	    else {
+	    	System.out.println("password are not match");
+	    }
+	    
+	    
+	    
+	   
+		
+	}
+
+}
