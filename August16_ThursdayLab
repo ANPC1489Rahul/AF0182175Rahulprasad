@@ -1,0 +1,92 @@
+Write a program to accept fulll name from the user and display the abbrevation of the first and middle names except the last name which is displayed as it is Eg:Manoj Rakesh 
+Gupta(M.R.Gupta)
+package Rahul;
+import java.util.Scanner;
+public class LAb1 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String name1,name2,name3;
+		char name4,name5;
+		System.out.println("Enter your first name");
+		name1 = sc.next();
+		System.out.println("Enter your second name");
+		name2 = sc.next();
+		System.out.println("Enter yoour last name");
+		name3 = sc.next();
+		System.out.println(name1+ " "+ name2+ " "+ name3);
+		name4 = name1.charAt(0);
+		name5 = name2.charAt(0);
+		System.out.println(name4+"."+name5+"."+name3);
+	}
+}
+
+
+Q2.write a program to remove duplicate words from string
+package Rahul;
+
+import java.util.Arrays;
+
+public class Removeduplicate {
+
+	public static void main(String[] args) {
+		
+		   String info = "LMS is the best learning website";  
+	        char str[] = info.toCharArray();  
+	        int len = str.length;   
+	        	      removeDuplicate(str, len);   
+
+	}
+	  static void removeDuplicate(char str[], int length)   
+	    {   
+	        	        int index = 0;   
+	    
+	        	        for (int i = 0; i < length; i++)   
+	        {   
+	              
+	            	            int j;   
+	            for (j = 0; j < i; j++)    
+	            {   
+	                if (str[i] == str[j])   
+	                {   
+	                    break;   
+	                }   
+	            }   
+	    
+	            if (j == i)    
+	            {   
+	                str[index++] = str[i];   
+	            }   
+	        }   
+	        System.out.println(String.valueOf(Arrays.copyOf(str, index)));   
+	    }   
+}
+
+Q3. Write a program to count vovels.
+package Rahul;
+
+import java.util.Scanner;
+
+public class Vovelinsentences {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		vovel();
+	}
+	public static void vovel() {
+		Scanner sc  = new Scanner(System.in);
+		String nam;
+		int count =0;
+		System.out.println("Enter the String to find vovel");
+		nam = sc.next();
+		nam = nam.toLowerCase();
+		for(int i=0;i<nam.length();i++) {
+			if(nam.charAt(i)=='a' || nam.charAt(i)=='e' || nam.charAt(i)=='i' || nam.charAt(i)=='o'
+			|| nam.charAt(i)=='u' ) {
+				count++;
+			}
+		}
+		System.out.println("The number of vovel in sentence are :" + count);
+		
+	}
+
+}
