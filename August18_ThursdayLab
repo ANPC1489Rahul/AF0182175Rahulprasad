@@ -1,0 +1,96 @@
+//Q2 : Check if to strings are created with same character ot not
+package strings;
+
+import java.util.Scanner;
+
+public class Stringscontainsornot {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter first String");
+        String s1 = sc.next();
+        System.out.println("Enter second string");
+        String s2 = sc.next();
+        int lenghtogs1= s1.length();
+        int lenghtogs2= s2.length();
+
+        boolean s = false;
+        if (lenghtogs1 == lenghtogs2){
+            for(int i=0 ;i<lenghtogs1;i++){
+                if(s1.charAt(i)==s2.charAt(i)){
+                    s= true;
+                    break;
+                }
+            }
+            System.out.println("String contains same character");
+        }
+        else{
+            System.out.println("Size is not equal");
+
+
+        }
+
+    }
+
+}
+
+package strings;
+//Write a program to accept two strings from the  uesrs and check if first strings contains second
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Contains {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1,s2,s4,s5;
+        boolean s3=false;
+        System.out.println("Enter first string");
+        s1 = sc.next();
+        s4 = s1.toLowerCase();
+        System.out.println("Enter second string");
+        s2 = sc.next();
+        s5= s2.toLowerCase();
+        if(s4.contains(s5)){
+            s3 = true;
+            System.out.println(s3);
+        }
+        else{
+            System.out.println("It dosent containe");
+        }
+
+    }
+}
+
+//q2swap twp string
+package strings;
+
+import java.util.Scanner;
+
+public class Swap {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1,s2;
+        System.out.println("Enter one string");
+        s1 = sc.next();
+        System.out.println("Enter second string");
+        s2 = sc.next();
+        System.out.println("String before swaping " + s1 +" "+ s2);
+        s1 = s1+s2;
+        s2= s1.substring(0,s1.length()-s2.length());
+        s1 = s1.substring(s2.length());
+        System.out.println("String after swaping " + s1 +" " + s2);
+    }
+}
+
+/reverse a string
+package strings;
+
+import java.util.Scanner;
+
+public class Reverse {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        StringBuffer s = new StringBuffer("shubham");
+        s.reverse();
+        System.out.println(s);
+    }
+}
