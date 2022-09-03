@@ -1,0 +1,103 @@
+//Write a program to create the chained exception where one exception describes the cause of another exception.
+
+package Revision;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Chained_Exception {
+	Scanner sc = new Scanner(System.in);						// class variable
+	int a,b;
+	
+	void accept()									// accept method that accept the value 
+	{
+		System.out.print("Enter A value : ");
+		a = sc.nextInt();							// storing a value
+		System.out.print("Enter B value : ");
+		b = sc.nextInt();							// storing  b value
+		try {									// try block to handle the exception
+			if(b==0)							// if b =0 then throw exception
+			{
+			    ArithmeticException ae = new ArithmeticException();		// creating a exception
+			    ae.initCause(new IOException());				// object of arithmetic exception creaing a another exception
+			    throw ae;
+			}
+			else
+				System.out.println("Division : "+a/b);			// if b !=0 then divide the value
+		}
+		catch(ArithmeticException ae)						// catch the exception
+		{
+			System.out.println("Caught : "+ae);				// print the caught exception
+			System.out.println("Actual : "+ae.getCause());			// print the actual exception
+		}
+		
+	}
+
+	public static void main(String[] args) 						// main method
+	{
+		Chained_Exception ob =new Chained_Exception();				// creating a object
+		ob.accept();								// calling a accept method
+	}
+
+}
+
+----------------------------------------------------------------------------------------------------------
+
+//Write a program to find second minimum and second maximum number from the array .
+package Revision;
+import java.util.Scanner;
+
+public class Second_MinMax_Array {
+	Scanner sc = new Scanner(System.in);						// class level variable
+	int size,i,min;
+	
+	void accept()									// accept method
+	{	
+		System.out.print("Enter the Size of Array : ");				// taking a size of array
+		size = sc.nextInt();
+		int arr[] = new int[size];
+		System.out.print("Enter the elements of Array : ");		
+		for(i=0; i<size; i++)
+		{
+			arr[i]=sc.nextInt();						// storing a array in a for loop
+		}
+		
+		System.out.print("Yours Arrays are : ");
+		for(i=0; i<size; i++)
+		{
+			System.out.print(arr[i]+" ");					// printing the array that user enter
+		}
+		min = arr[1];								//passing array second value to the min variable
+		for(i=0; i<arr.length; i++)
+		{
+			for(int j=i+1; j<arr.length; j++)
+			{
+				if(arr[i] >arr[j])		
+				{
+					min = arr[i];					// sorting a array in asscending order
+					arr[i] = arr[j];
+					arr[j] = min;
+				}
+			}
+		}
+		System.out.println("\nSecond Minimum Value :"+arr[1]);			// print the array second value after a sorting
+		System.out.println("Second Maximum Value :"+(arr[arr.length-2]));	// print the array second last value after a sorting
+		
+	}
+	
+	public static void main(String[] args)						// main method
+	{
+		Second_MinMax_Array ob = new Second_MinMax_Array();			// creating a object of class
+		ob.accept();								// calling a accept method
+	}
+
+}
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+Ques 1. Write a program to create the chained exception where one exception describes the cause of another exception.
+
+Ques 2. Write a program to find second minimum and second maximum number from the array .
+
+Ques 3. Write a program to accept N User details Name, No , Address, email , UserID , Password .Store user ID and password in the file .Accept a userID from the user and delete that record from the file.
